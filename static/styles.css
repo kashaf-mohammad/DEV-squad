@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #e6f4f1);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, #FF6B6B 0%, #4ECDC4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Buttons */
+button {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#open-camera-btn, #capture-btn {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#open-camera-btn:hover, #capture-btn:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    transform: scale(1.05);
+}
+
+/* Video and Canvas */
+#camera {
+    display: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    transition: opacity 0.5s ease;
+}
+
+#camera.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+#canvas {
+    display: none;
+}
+
+/* Result Section */
+#result {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 24px;
+    animation: fadeIn 1s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#result:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+#food {
+    font-weight: 700;
+    color: #FF6B6B;
+    transition: color 0.3s ease;
+}
+
+#nutrition {
+    font-size: 16px;
+    color: #555;
+    margin-top: 12px;
+    transition: color 0.3s ease;
+}
+
+/* Loading Animation */
+.loading {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #FF6B6B;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Navbar */
+nav {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease;
+}
+
+nav .bi-camera {
+    color: #FF6B6B;
+    transition: color 0.3s ease;
+}
+
+nav span {
+    font-weight: 700;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav:hover .bi-camera {
+    color: #4ECDC4;
+}
+
+nav:hover span {
+    color: #FF6B6B;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    animation: fadeIn 1s ease;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 24px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #open-camera-btn, #capture-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    #camera {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Additional Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Hover Effects */
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Animation */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-background {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FF6B6B);
+    background-size: 200% 200%;
+    animation: backgroundShift 10s infinite;
+}
